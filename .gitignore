@@ -1,1 +1,7 @@
 build
+elf2uf2
+*.o
+*.elf
+*.uf2
+*.map
+*.json
