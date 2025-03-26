@@ -1,12 +1,12 @@
-  /**
-   * File Name : blink.s
-   * Author    : DG
-   * Version   : 1.0
-   * Date      : Mar 25, 2025
-   * About     : Assembler program to flash LED connected to the
-   *           : Raspberry Pi PICO GPIO (internal LED on GPIO25)
-   *           : NO SDK
-   */
+/**
+ * File Name : blink.s
+ * Author    : DG
+ * Version   : 1.0
+ * Date      : Mar 25, 2025
+ * About     : Assembler program to flash LED connected to the
+ *           : Raspberry Pi PICO GPIO (internal LED on GPIO25)
+ *           : NO SDK
+ */
 
   // Bare Metal Assembly Blinking Routine
 

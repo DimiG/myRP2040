@@ -1,14 +1,14 @@
-  /**
-  * File Name : HelloWorld.S
-  * Author    : DG
-  * Version   : 1.0
-  * Date      : Feb 25, 2025
-  * About     : Assembler program to print out "Hello World" using the Pico SDK
-  *           : Tested on real hardware - Raspberry Pi Pico
-  * Note      : R0 - the first parameter to printf
-  *           : R1 - the second parameter to printf
-  *           : R7 - index counter
-  */
+/**
+ * FILE NAME : HelloWorld.S
+ * AUTHOR    : DG
+ * VERSION   : 1.0
+ * DATE      : Feb 25, 2025
+ * ABOUT     : Assembler program to print out "Hello World" using the Pico SDK
+ *           : Tested on real hardware - Raspberry Pi Pico
+ * NOTE      : R0 - the first parameter to printf
+ *           : R1 - the second parameter to printf
+ *           : R7 - index counter
+ */
 
   .thumb_func         // Necessary because SDK uses BLX
   .global main        // Provide program starting address to linker
