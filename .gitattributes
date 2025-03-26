@@ -1,3 +1,4 @@
 *.zip   binary
 *.png   binary
+*.pdf   binary
 elf2uf2 binary

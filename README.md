@@ -31,7 +31,7 @@ In order for this example to work, it is necessary:
 
 `Blink_NOSDK`: This is an example of a **Blink LED** program written in assembly language and **NOT USING** the **SDK**.  
 Some files were accidentally found on the Internet. It's strange that the chip manufacturer doesn't implement assembly language into their product itself.  
-To get info how to compile run `make` comand for help. The code looks like core project for future experiments.  
+To get info how to compile run `make` command for help. The code looks like core project for future experiments.  
 The microcontroller manufacturer recommends using the official **SDK** for real-world applications.  
 Assembly language programming helps to understand how a microcontroller works due to the **SDK** usually hides a large number of routine operations.  
 In order for this example to work, it is necessary:
