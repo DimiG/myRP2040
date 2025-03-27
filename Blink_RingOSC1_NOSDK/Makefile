@@ -3,14 +3,17 @@
 # Just help to automate the compilation process
 # With `make', 'make help' and `make clean'
 # Created by: DG
-# Date: 2025-03-25
+# Date: 2025-03-27
 
 ### VARIABLEs ###
-APP_NAME := blink
-CC       := arm-none-eabi-gcc
-MACH     := cortex-m0plus
-CFLAGS   := -c -mcpu=$(MACH) -mthumb -std=gnu11 -Wall -O0
-LFLAGS   := -nostdlib -T linker_script.ld -Wl,-Map=$(APP_NAME).map
+APP_NAME     := blink_ringosc
+BOOT_2       := bs2_default
+LINKER_SCR   := linker_script.ld
+VECTOR_TABLE := vector_table
+CC           := arm-none-eabi-gcc
+MACH         := cortex-m0plus
+CFLAGS       := -c -mcpu=$(MACH) -mthumb -std=gnu11 -Wall -O0
+LFLAGS       := -nostdlib -T $(LINKER_SCR) -Wl,-Map=$(APP_NAME).map
 
 .PHONY: default help uf2 upload clean clean-all
 
@@ -47,19 +50,19 @@ help:
 	@echo "$$HELP"
 	@tput sgr0
 
-all: bs2_default.o $(APP_NAME).o vector_table.o link uf2
+all:  $(BOOT_2).o $(APP_NAME).o $(VECTOR_TABLE).o link uf2
 
-bs2_default.o: bs2_default.s
+$(BOOT_2).o: $(BOOT_2).s
 	@$(CC) $(CFLAGS) -o $@ $^
 	@echo "[ COMPILE... ]"
 
 $(APP_NAME).o: $(APP_NAME).s
 	@$(CC) $(CFLAGS) -o $@ $^
 
-vector_table.o: vector_table.s
+$(VECTOR_TABLE).o: $(VECTOR_TABLE).s
 	@$(CC) $(CFLAGS) -o $@ $^
 
-$(APP_NAME).elf: bs2_default.o vector_table.o $(APP_NAME).o
+$(APP_NAME).elf: $(BOOT_2).o $(VECTOR_TABLE).o $(APP_NAME).o
 	@$(CC) $(LFLAGS) -o $@ $^
 
 link: $(APP_NAME).elf

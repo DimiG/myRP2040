@@ -1,6 +1,6 @@
 HelloWorld
 ===========
-This project demonstrates how you can use assembly language using a proprietary [SDK][picosdk].
+This program demonstrates how you can use assembly language using a proprietary [SDK][picosdk].
 
 Program description
 -------------------
