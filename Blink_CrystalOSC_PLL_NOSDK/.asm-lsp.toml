@@ -1,0 +1,39 @@
+[default_config]
+# Configure documentation available for features like hover and completions
+assembler = "gas"
+instruction_set = "arm"
+
+[opts]
+# The `compiler` field is the name of a compiler/assembler on your path
+# (or the absolute path to the file) that is used to build your source files
+# This program will be used to generate diagnostics
+compiler = "/usr/bin/arm-none-eabi-gcc" # need "cc" as the first argument in `compile_flags.txt`
+diagnostics = false
+default_diagnostics = false
+
+# Configure the server's treatment of source files in the `arm-project` sub-directory
+[[project]]
+# path = "arm-project"
+assembler = "gas"
+instruction_set = "arm"
+
+# List of allowed params
+#
+# [assemblers]
+# gas = true
+# go = false
+# masm = false
+# nasm  = false
+# ca65 = false
+# avr = false
+#
+# [instruction_sets]
+# x86 = false
+# x86-64 = false
+# x86/x86-64 = false
+# arm = true
+# arm64 = false
+# riscv = false
+# z80 = false
+# 6502 = false
+# avr = false
